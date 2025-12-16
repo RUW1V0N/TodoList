@@ -7,6 +7,8 @@ function ItemList(props){
         id = "",
         title = "",
         isDone,
+        onToggleCheckedTask,
+        onDeleteTask,
     } = props;
     
     return(
@@ -19,12 +21,15 @@ function ItemList(props){
             className = "checked_item_list"
             type = "checkbox"
             checked = {isDone}
+            onChange = {({target}) => onToggleCheckedTask(id,target.checked)} /*не понимаю почему не работает с event но сокращение с  target работает */
         />
         {title}
 
         <ButtonForm
             className = "delete_item_list"
-            type = "button"></ButtonForm>
+            type = "button"
+            onClick = {() => onDeleteTask(id)}>
+            </ButtonForm>
         </li>
 
     )

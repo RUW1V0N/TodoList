@@ -4,6 +4,8 @@ function InputForm(props){
         autocompled = 'off',
         placeholder = '',
         type = 'text',
+        value,
+        onChange,
         checked,
     } = props
     
@@ -13,7 +15,9 @@ function InputForm(props){
             autocompled = {autocompled}
             placeholder = {placeholder}
             type = {type}
-            checked = {checked}
+            value={value}
+            onChange={onChange}
+            checked= {checked}
         />
     );
 }

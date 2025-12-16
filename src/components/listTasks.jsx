@@ -1,7 +1,11 @@
 import ItemList from "./itemListTask";
 
 function ListTasks(props) {
-  const { tasks = [] } = props;
+  const { 
+    tasks = [],
+    onToggleCheckedTask,
+    onDeleteTask,
+  } = props;
 
   const hasTasks = tasks.length > 0;
 
@@ -17,6 +21,8 @@ function ListTasks(props) {
           id={task.id}
           title={task.title}
           isDone={task.isDone}
+          onToggleCheckedTask = {onToggleCheckedTask}
+          onDeleteTask = {onDeleteTask}
         />
       ))}
     </ul>

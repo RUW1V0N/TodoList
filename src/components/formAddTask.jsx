@@ -1,17 +1,28 @@
 import InputForm from "./input";
 import ButtonForm from "./button";
 
-function FormAddTask() {
-  
+function FormAddTask(props) {
+    const {
+      addTask,
+      titleAddTask ,
+      setTitleAddTask
+     } = props;
+    
+    function onSubmit(event){
+      event.preventDefault();
+      addTask();
+    }
     return (
-    <form className="form_adding_a_task">
+    <form className="form-adding-a-task" onSubmit={onSubmit}>
       <InputForm
-        className = "adding_task"
+        className = "adding-task"
         autocompled = "off"
         placeholder = "New task title"
+        value = {titleAddTask}
+        onChange = {(event) => setTitleAddTask(event.target.value)}
       />
       <ButtonForm
-        className = "button_for_add"
+        className = "button-for-add"
         type = "submit">Add</ButtonForm>
     </form>
   );

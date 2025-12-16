@@ -1,16 +1,51 @@
+import { useState } from "react";
 import FormAddTask from "./formAddTask" /* я не понимаю , просто гит решил сохранить файл с маленьким регистром и профиг что его нет */
 import ListTasks from "./ListTasks";
 
 function Todo(){
-  const tasks = [
-    {id: "1", title: "drink beer", isDone: false},
-    {id: "2", title: "2 drink beer", isDone: true}
-  ]
+  const [tasks, setTasks] = useState([]);
+  const [titleAddTask, setTitleAddTask] = useState('');
+
+  function addTask(){
+    if(titleAddTask.trim().length > 0){
+      const newTask = {
+        id:crypto?.randomUUID() ?? Date.now().toString(),
+        title: titleAddTask,
+        isDone: false
+      }
+      setTasks([...tasks, newTask]);
+      setTitleAddTask('');
+    }
+  }
+
+  function deleteTask(id){
+    setTasks(
+      tasks.filter((task) => task.id !== id)
+    )
+  }
+
+  function toggleCheckedTask(id, isDone) {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) return { ...task, isDone };
+        return task;
+      })
+    );
+  }
+  
     return (
       <div className="todo">
         <label className="header__label">To Do List</label>
-        <FormAddTask />
-        <ListTasks tasks = {tasks}/>
+        <FormAddTask 
+          addTask = {addTask}
+          titleAddTask = {titleAddTask}
+          setTitleAddTask = {setTitleAddTask}
+        />
+        <ListTasks 
+          tasks = {tasks}
+          onToggleCheckedTask = {toggleCheckedTask} 
+          onDeleteTask = {deleteTask}
+        />
       </div>
     );
 }
