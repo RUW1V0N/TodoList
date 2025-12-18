@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormAddTask from "./formAddTask" /* я не понимаю , просто гит решил сохранить файл с маленьким регистром и профиг что его нет */
 import ListTasks from "./ListTasks";
 
 function Todo(){
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() =>{
+    const savedTasks = localStorage.getItem('tasks');
+    if(savedTasks){
+      return JSON.parse(savedTasks);
+    }
+
+    return [];
+});
   const [titleAddTask, setTitleAddTask] = useState('');
 
   function addTask(){
@@ -24,6 +31,7 @@ function Todo(){
     )
   }
 
+
   function toggleCheckedTask(id, isDone) {
     setTasks(
       tasks.map((task) => {
@@ -32,6 +40,10 @@ function Todo(){
       })
     );
   }
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  },[tasks]);
   
     return (
       <div className="todo">
