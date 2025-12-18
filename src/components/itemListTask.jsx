@@ -19,6 +19,7 @@ function ItemList(props){
         >
         <InputForm
             className = "checked_item_list"
+            name  = "checked_item_list"
             type = "checkbox"
             checked = {isDone}
             onChange = {({target}) => onToggleCheckedTask(id,target.checked)} /*не понимаю почему не работает с event но сокращение с  target работает */

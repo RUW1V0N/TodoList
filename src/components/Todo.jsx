@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import FormAddTask from "./formAddTask" /* я не понимаю , просто гит решил сохранить файл с маленьким регистром и профиг что его нет */
 import ListTasks from "./ListTasks";
+import Panel_info_tasks from "./infoAboutTasks";
 
 function Todo(){
   const [tasks, setTasks] = useState(() =>{
@@ -52,6 +53,9 @@ function Todo(){
           addTask = {addTask}
           titleAddTask = {titleAddTask}
           setTitleAddTask = {setTitleAddTask}
+        />
+        <Panel_info_tasks
+          tasks = {tasks}
         />
         <ListTasks 
           tasks = {tasks}

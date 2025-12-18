@@ -1,7 +1,8 @@
 function InputForm(props){
     const{
         className ='',
-        autocompled = 'off',
+        name= '',
+        autoComplete = 'off',
         placeholder = '',
         type = 'text',
         value,
@@ -12,7 +13,8 @@ function InputForm(props){
     return(
         <input 
             className = {className}
-            autocompled = {autocompled}
+            name = {name}
+            autoComplete = {autoComplete}
             placeholder = {placeholder}
             type = {type}
             value={value}

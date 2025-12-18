@@ -16,7 +16,8 @@ function FormAddTask(props) {
     <form className="form-adding-a-task" onSubmit={onSubmit}>
       <InputForm
         className = "adding-task"
-        autocompled = "off"
+        name = "adding-task"
+        autoComplete = "off"
         placeholder = "New task title"
         value = {titleAddTask}
         onChange = {(event) => setTitleAddTask(event.target.value)}
