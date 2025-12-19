@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FormAddTask from "./formAddTask" /* я не понимаю , просто гит решил сохранить файл с маленьким регистром и профиг что его нет */
+import FormAddTask from "./formAddTask";
 import ListTasks from "./ListTasks";
 import Panel_info_tasks from "./infoAboutTasks";
 
@@ -52,7 +52,7 @@ function Todo(){
   
     return (
       <div className="todo">
-        <label className="header__label">To Do List</label>
+        <h1 className="header__label">To Do List</h1>
         <FormAddTask 
           addTask = {addTask}
           titleAddTask = {titleAddTask}
