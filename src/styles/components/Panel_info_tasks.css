@@ -1,0 +1,17 @@
+.info-total-tasks{
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Inter', Semi-bold;
+    letter-spacing: 0;
+}
+.info-delete-all{
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Inter', Semi-bold;
+    letter-spacing: 0;
+    background-color: #ffffffff;
+    border: none;
+    padding: 5px; 
+    width: 100px;
+    color: #000000;
+}

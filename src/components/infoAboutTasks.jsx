@@ -3,6 +3,7 @@ import ButtonForm from "./button";
 function Panel_info_tasks(props) {
     const { 
         tasks, 
+        onDeleteAllTasks,
     } = props;
 
     const lengthTatalTasks = tasks.length;
@@ -16,7 +17,9 @@ function Panel_info_tasks(props) {
                 <ButtonForm 
                     className="info-delete-all" 
                     type="button" 
-                />
+                    onClick = {() => {
+                        onDeleteAllTasks();
+                    }} > Delete All </ButtonForm>
             }
         </div>
     );

@@ -10,9 +10,7 @@ function ButtonForm(props) {
     <button 
     className={className} 
     type={type}
-    onClick={onClick}>
-      {children}
-    </button>
+    onClick={onClick}> {children} </button>
   );
 }
 

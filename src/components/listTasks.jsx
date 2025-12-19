@@ -17,7 +17,7 @@ function ListTasks(props) {
       {tasks.map((task) => (
         <ItemList
           key={task.id}
-          className={task.className}
+          className="task-on-list"
           id={task.id}
           title={task.title}
           isDone={task.isDone}

@@ -1,5 +1,6 @@
 import ButtonForm from "./button";
 import InputForm from "./input";
+import Component_close from "./SVG_component_x";
 
 function ItemList(props){
     const {
@@ -24,13 +25,12 @@ function ItemList(props){
             checked = {isDone}
             onChange = {({target}) => onToggleCheckedTask(id,target.checked)} /*не понимаю почему не работает с event но сокращение с  target работает */
         />
-        {title}
+        <span>{title}</span>
 
         <ButtonForm
             className = "delete_item_list"
             type = "button"
-            onClick = {() => onDeleteTask(id)}>
-            </ButtonForm>
+            onClick = {() => onDeleteTask(id)}> <Component_close/> </ButtonForm>
         </li>
 
     )

@@ -42,6 +42,10 @@ function Todo(){
     );
   }
 
+  function deleteAllTasks(){
+    setTasks('');
+  }
+
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks))
   },[tasks]);
@@ -56,6 +60,7 @@ function Todo(){
         />
         <Panel_info_tasks
           tasks = {tasks}
+          onDeleteAllTasks = {deleteAllTasks}
         />
         <ListTasks 
           tasks = {tasks}
