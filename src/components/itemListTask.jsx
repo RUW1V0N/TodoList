@@ -1,6 +1,6 @@
 import ButtonForm from "./button";
 import InputForm from "./input";
-import CrossIcon from "./CrossIcon";
+import {CrossIcon} from "./cross-icon";
 
 export default function ItemList(props) {
     const {

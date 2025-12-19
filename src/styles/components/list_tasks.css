@@ -28,13 +28,3 @@
     display: flex;
     padding: 0;
 }
-
-.task-on-list .svg-component {
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    color: #757575;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
