@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FormAddTask from "./formAddTask";
+import FormAddTask from "./FormAddTask";
 import ListTasks from "./ListTasks";
 import Panel_info_tasks from "./infoAboutTasks";
 
@@ -17,11 +17,11 @@ function Todo(){
   function addTask(){
     if(titleAddTask.trim().length > 0){
       const newTask = {
-        id:crypto?.randomUUID() ?? Date.now().toString(),
+        id: Date.now().toString(),
         title: titleAddTask,
         isDone: false
-      }
-      setTasks([...tasks, newTask]);
+      };
+      setTasks((prev) => [...prev, newTask]);
       setTitleAddTask('');
     }
   }
