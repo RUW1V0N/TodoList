@@ -1,19 +1,20 @@
-import InputForm from "./input";
-import ButtonForm from "./button";
+import { InputForm } from "../field";
+import { ButtonForm } from "../button";
+import form_add_task_styles from './form_adding_a_task.module.css'
 
-function FormAddTask(props) {
+export function FormAddTask(props) {
     const {
       addTask,
       titleAddTask ,
       setTitleAddTask
-     } = props;
+    } = props;
     
     function onSubmit(event){
       event.preventDefault();
       addTask();
     }
     return (
-    <form className="form-adding-a-task" onSubmit={onSubmit}>
+    <form className={form_add_task_styles.formAddingTask} onSubmit={onSubmit}>
       <InputForm
         className = "adding-task"
         name = "adding-task"
@@ -28,5 +29,3 @@ function FormAddTask(props) {
     </form>
   );
 }
-
-export default FormAddTask

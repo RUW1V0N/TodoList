@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import todo_styles from "./todo.module.css"
-import FormAddTask from "./FormAddTask";
-import ListTasks from "./ListTasks";
-import Panel_info_tasks from "./infoAboutTasks";
+import { FormAddTask } from "../form-add-task";
+import { ListTasks } from "../list-tasks";
+import { Panel_info_tasks } from "../info-about-tasks";
 
 export function Todo(){
   const [tasks, setTasks] = useState(() =>{

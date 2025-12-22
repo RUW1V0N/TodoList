@@ -1,4 +1,4 @@
-function InputForm(props){
+export function InputForm(props){
     const{
         className ='',
         name= '',
@@ -23,5 +23,3 @@ function InputForm(props){
         />
     );
 }
-
-export default InputForm

@@ -1,6 +1,7 @@
-import ItemList from "./ItemListTask";
+import { ItemList } from '../item-list-task';
+import list_tasks_styles from './list_tasks.module.css'
 
-function ListTasks(props) {
+export function ListTasks(props) {
   const { 
     tasks = [],
     onToggleCheckedTask,
@@ -13,7 +14,7 @@ function ListTasks(props) {
     return <div className="no-tasks-list-task">No tasks</div>;
   }
   return (
-    <ul className="list-task">
+    <ul className={list_tasks_styles.taskOnList}>
       {tasks.map((task) => (
         <ItemList
           key={task.id}
@@ -28,5 +29,3 @@ function ListTasks(props) {
     </ul>
   );
 }
-
-export default ListTasks;

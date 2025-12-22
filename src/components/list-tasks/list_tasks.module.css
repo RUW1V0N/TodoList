@@ -1,4 +1,4 @@
-.task-on-list {
+.taskOnList {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,7 +7,7 @@
     border-radius: 7px;
     padding: 12px 10px;
 }
-.task-on-list span {
+.taskOnList span {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -19,17 +19,17 @@
     color: #757575;
 }
 
-.task-on-list .checked-item-list {
+.taskOnList .checked-item-list {
     width: 20px;
     height: 20px;
 }
 
-.task-on-list  input[type="checkbox"] {
+.taskOnList  input[type="checkbox"] {
     accent-color: #2C2C2C;
     border: #2C2C2C;
 }
 
-.task-on-list .delete-item-list {
+.taskOnList .delete-item-list {
     display: flex;
     padding: 0;
     background-color: transparent;

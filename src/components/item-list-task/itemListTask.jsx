@@ -1,8 +1,8 @@
-import ButtonForm from "./button";
-import InputForm from "./input";
-import {CrossIcon} from "./cross-icon";
+import { ButtonForm } from "../button";
+import { InputForm } from "../field";
+import { CrossIcon } from "../cross-icon";
 
-export default function ItemList(props) {
+export function ItemList(props) {
     const {
         className,
         id,

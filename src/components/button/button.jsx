@@ -1,4 +1,4 @@
-function ButtonForm(props) {
+export function ButtonForm(props) {
   const { 
     className = "", 
     type = "button", 
@@ -13,5 +13,3 @@ function ButtonForm(props) {
     onClick={onClick}> {children} </button>
   );
 }
-
-export default ButtonForm
