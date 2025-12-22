@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import todo_styles from "./todo.module.css"
 import FormAddTask from "./FormAddTask";
 import ListTasks from "./ListTasks";
 import Panel_info_tasks from "./infoAboutTasks";
 
-function Todo(){
+export function Todo(){
   const [tasks, setTasks] = useState(() =>{
     const savedTasks = localStorage.getItem('tasks');
     if(savedTasks){
@@ -51,7 +52,7 @@ function Todo(){
   },[tasks]);
   
     return (
-      <div className="todo">
+      <div className={todo_styles.todo}>
         <h1 className="header__label">To Do List</h1>
         <FormAddTask 
           addTask = {addTask}
@@ -70,5 +71,3 @@ function Todo(){
       </div>
     );
 }
-
-export default Todo
