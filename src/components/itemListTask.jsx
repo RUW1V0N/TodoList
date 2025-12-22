@@ -15,7 +15,7 @@ export default function ItemList(props) {
     return (
         <li className={className} id={id} title={title}>
             <InputForm
-                className="checked_item_list"
+                className="checked-item-list"
                 name="checked_item_list"
                 type="checkbox"
                 checked={isDone}
@@ -26,7 +26,7 @@ export default function ItemList(props) {
             <span>{title}</span>
 
             <ButtonForm
-                className="delete_item_list"
+                className="delete-item-list"
                 type="button"
                 onClick={() => onDeleteTask(id)}
             >

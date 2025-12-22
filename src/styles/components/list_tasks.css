@@ -19,12 +19,19 @@
     color: #757575;
 }
 
-.task-on-list input {
+.task-on-list .checked-item-list {
     width: 20px;
     height: 20px;
 }
 
-.task-on-list .delete_item_list {
+.task-on-list  input[type="checkbox"] {
+    accent-color: #2C2C2C;
+    border: #2C2C2C;
+}
+
+.task-on-list .delete-item-list {
     display: flex;
     padding: 0;
+    background-color: transparent;
+    border: none;
 }
