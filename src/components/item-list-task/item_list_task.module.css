@@ -1,9 +1,6 @@
-span {
+.title {
     display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    padding: 0px 3px;
+    flex: 1;
     font-family: "Inter", Regular;
     font-size: 16px;
     letter-spacing: 0;
@@ -15,13 +12,20 @@ span {
     height: 20px;
 }
 
-input[type="checkbox"] {
+.isDoneTask input[type="checkbox"] {
     accent-color: #2C2C2C;
     border: #2C2C2C;
 }
 
+.isDoneTask .title{
+    text-decoration: line-through;
+}
+
 .deleteItemList {
     display: flex;
+    flex-shrink: 0;
+    margin-left: auto; 
+    height: 100%;
     padding: 0;
     background-color: transparent;
     border: none;

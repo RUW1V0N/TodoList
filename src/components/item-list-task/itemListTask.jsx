@@ -14,7 +14,10 @@ export function ItemList(props) {
     } = props;
 
     return (
-        <li className={className} id={id} title={title}>
+        <li 
+        className={`${className} ${isDone ? styles.isDoneTask: ""}`} 
+        id={id} 
+        title={title}>
             <InputForm
                 className={styles.checkedItemList}
                 name="checked_item_list"
@@ -24,7 +27,7 @@ export function ItemList(props) {
                     onToggleCheckedTask(id, event.target.checked)
                 }
             />
-            <span>{title}</span>
+            <span className={styles.title}>{title}</span>
 
             <ButtonForm
                 className={styles.deleteItemList}
