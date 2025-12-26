@@ -1,5 +1,5 @@
 import { ItemList } from '../item-list-task';
-import list_tasks_styles from './list_tasks.module.css'
+import styles from './list_tasks.module.css'
 
 export function ListTasks(props) {
   const { 
@@ -11,14 +11,14 @@ export function ListTasks(props) {
   const hasTasks = tasks.length > 0;
 
   if (!hasTasks) {
-    return <div className="no-tasks-list-task">No tasks</div>;
+    return <div className={styles.noTasksListTask}>No tasks</div>;
   }
   return (
-    <ul className={list_tasks_styles.taskOnList}>
+    <ul className={styles.listTask}>
       {tasks.map((task) => (
         <ItemList
           key={task.id}
-          className="task-on-list"
+          className={styles.taskOnList}
           id={task.id}
           title={task.title}
           isDone={task.isDone}

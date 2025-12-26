@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import todo_styles from "./todo.module.css"
 import { FormAddTask } from "../form-add-task";
 import { ListTasks } from "../list-tasks";
 import { Panel_info_tasks } from "../info-about-tasks";
+import styles from "./todo.module.css"
 
 export function Todo(){
   const [tasks, setTasks] = useState(() =>{
@@ -52,8 +52,8 @@ export function Todo(){
   },[tasks]);
   
     return (
-      <div className={todo_styles.todo}>
-        <h1 className="header__label">To Do List</h1>
+      <div className={styles.todo}>
+        <h1 className={styles.headerLabel}>To Do List</h1>
         <FormAddTask 
           addTask = {addTask}
           titleAddTask = {titleAddTask}

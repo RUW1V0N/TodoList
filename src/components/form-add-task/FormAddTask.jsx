@@ -1,6 +1,6 @@
 import { InputForm } from "../field";
 import { ButtonForm } from "../button";
-import form_add_task_styles from './form_adding_a_task.module.css'
+import styles from './form_adding_a_task.module.css'
 
 export function FormAddTask(props) {
     const {
@@ -14,9 +14,9 @@ export function FormAddTask(props) {
       addTask();
     }
     return (
-    <form className={form_add_task_styles.formAddingTask} onSubmit={onSubmit}>
+    <form className={styles.formAddingTask} onSubmit={onSubmit}>
       <InputForm
-        className = "adding-task"
+        className = {styles.addingTask}
         name = "adding-task"
         autoComplete = "off"
         placeholder = "New task title"
@@ -24,7 +24,7 @@ export function FormAddTask(props) {
         onChange = {(event) => setTitleAddTask(event.target.value)}
       />
       <ButtonForm
-        className = "button-for-add"
+        className = {styles.buttonAdd}
         type = "submit">Add</ButtonForm>
     </form>
   );

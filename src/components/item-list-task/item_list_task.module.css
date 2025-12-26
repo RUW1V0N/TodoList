@@ -1,0 +1,28 @@
+span {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 0px 3px;
+    font-family: "Inter", Regular;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #757575;
+}
+
+.checkedItemList {
+    width: 20px;
+    height: 20px;
+}
+
+input[type="checkbox"] {
+    accent-color: #2C2C2C;
+    border: #2C2C2C;
+}
+
+.deleteItemList {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}

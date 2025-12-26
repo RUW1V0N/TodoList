@@ -1,5 +1,5 @@
 import { ButtonForm } from "../button";
-import info_about_tasks_styles from './Panel_info_tasks.module.css'
+import styles from './Panel_info_tasks.module.css'
 
 export function Panel_info_tasks(props) {
     const { 
@@ -10,13 +10,13 @@ export function Panel_info_tasks(props) {
     const lengthTatalTasks = tasks.length;
     const hasTasks = tasks.length > 0;
     return (
-        <div className={info_about_tasks_styles.infoTotalTasks}>
-            <span className="info-total-tasks" tasks={tasks}>
+        <div className={styles.panelInfoTasks}>
+            <span className={styles.infoTotalTasks} tasks={tasks}>
             Total tasks: {lengthTatalTasks}
             </span>
             {hasTasks &&
                 <ButtonForm 
-                    className="info-delete-all" 
+                    className={styles.infoDeleteAll} 
                     type="button" 
                     onClick = {() => {
                         onDeleteAllTasks();

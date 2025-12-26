@@ -1,6 +1,7 @@
 import { ButtonForm } from "../button";
 import { InputForm } from "../field";
 import { CrossIcon } from "../cross-icon";
+import styles from "./item_list_task.module.css"
 
 export function ItemList(props) {
     const {
@@ -15,7 +16,7 @@ export function ItemList(props) {
     return (
         <li className={className} id={id} title={title}>
             <InputForm
-                className="checked-item-list"
+                className={styles.checkedItemList}
                 name="checked_item_list"
                 type="checkbox"
                 checked={isDone}
@@ -26,7 +27,7 @@ export function ItemList(props) {
             <span>{title}</span>
 
             <ButtonForm
-                className="delete-item-list"
+                className={styles.deleteItemList}
                 type="button"
                 onClick={() => onDeleteTask(id)}
             >
