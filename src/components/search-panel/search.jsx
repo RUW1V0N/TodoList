@@ -1,4 +1,5 @@
 import { InputForm } from "../field"
+import { SearchIcon } from '../search-icon'
 import styles from "./search.module.css"
 
 export function Search(props){
@@ -17,6 +18,7 @@ export function Search(props){
                 value = {searchField}
                 onChange = {(event) => setSearchField(event.target.value)}
             />
+            <SearchIcon/>
         </div>
     )
 }

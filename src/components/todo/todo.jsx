@@ -19,7 +19,7 @@ export function Todo(){
   function addTask(){
     if(titleAddTask.trim().length > 0){
       const newTask = {
-        id: crypto.randomUUID()??Date.now.toString(),
+        id: Date.now.toString(),
         title: titleAddTask,
         isDone: false
       };
