@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { FormAddTask } from "../form-add-task";
-import { ListTasks } from "../list-tasks";
+import { Search } from "../search-panel";
 import { Panel_info_tasks } from "../info-about-tasks";
+import { ListTasks } from "../list-tasks";
 import styles from "./todo.module.css"
 
 export function Todo(){
@@ -18,14 +19,26 @@ export function Todo(){
   function addTask(){
     if(titleAddTask.trim().length > 0){
       const newTask = {
-        id: Date.now().toString(),
+        id: crypto.randomUUID()??Date.now.toString(),
         title: titleAddTask,
         isDone: false
       };
       setTasks((prev) => [...prev, newTask]);
       setTitleAddTask('');
+      setSearchField('');
     }
   }
+
+  const [searchField, setSearchField] = useState('');
+
+  function searchFilter(tasks, searchField){
+    const filterField = searchField.trim().toLowerCase();
+
+    if(filterField.length === 0 ) return tasks
+    
+    return tasks.filter(({title}) => title.toLowerCase().includes(filterField));
+  }
+
 
   function deleteTask(id){
     setTasks(
@@ -44,7 +57,7 @@ export function Todo(){
   }
 
   function deleteAllTasks(){
-    setTasks('');
+    setTasks([]);
   }
 
   useEffect(() => {
@@ -59,12 +72,18 @@ export function Todo(){
           titleAddTask = {titleAddTask}
           setTitleAddTask = {setTitleAddTask}
         />
+        <Search 
+          searchField = {searchField}
+          setSearchField = {setSearchField}
+        />
         <Panel_info_tasks
           tasks = {tasks}
           onDeleteAllTasks = {deleteAllTasks}
         />
         <ListTasks 
           tasks = {tasks}
+          searchField = {searchField}
+          onSearchTask = {searchFilter(tasks, searchField)}
           onToggleCheckedTask = {toggleCheckedTask} 
           onDeleteTask = {deleteTask}
         />

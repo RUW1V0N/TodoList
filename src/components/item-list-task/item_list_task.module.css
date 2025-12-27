@@ -7,6 +7,10 @@
     color: #757575;
 }
 
+.isDoneTask .title{
+    text-decoration: line-through;
+}
+
 .checkedItemList {
     width: 20px;
     height: 20px;
@@ -15,10 +19,6 @@
 .isDoneTask input[type="checkbox"] {
     accent-color: #2C2C2C;
     border: #2C2C2C;
-}
-
-.isDoneTask .title{
-    text-decoration: line-through;
 }
 
 .deleteItemList {
