@@ -1,6 +1,6 @@
-export function ButtonForm(props) {
+export function Button(props) {
   const { 
-    className = "", 
+    className, 
     type = "button", 
     children,
     onClick,

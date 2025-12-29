@@ -1,1 +1,1 @@
-export { ButtonForm } from './button'
+export { Button } from './button'

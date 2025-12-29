@@ -1,9 +1,9 @@
-export function InputForm(props){
+export function Input(props){
     const{
-        className ='',
-        name= '',
+        className,
+        name,
         autoComplete = 'off',
-        placeholder = '',
+        placeholder ,
         type = 'text',
         value,
         onChange,

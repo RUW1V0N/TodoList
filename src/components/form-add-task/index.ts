@@ -1,1 +1,1 @@
-export { FormAddTask } from './FormAddTask'
+export { AddingTaskForm } from './adding-task-form'

@@ -1,8 +1,9 @@
-export function NewTask(title){
-    if(title.trim().length > 0){
+export function newTask(title){
+    const trimmedTitle = title.trim();
+    if(trimmedTitle.length > 0){
         return{
             id: Date.now().toString(),
-            title: title,
+            title: trimmedTitle,
             isDone: false
         };}
 }

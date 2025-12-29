@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
-import { FormAddTask } from "../form-add-task";
-import { NewTask } from "./newTask"
-import { Search } from "../search-panel";
-import { Panel_info_tasks } from "../info-about-tasks";
-import { ListTasks } from "../list-tasks";
+import { AddingTaskForm } from "../form-add-task";
+import { newTask } from "./newTask"
+import { Search } from "../search";
+import { TotalInfo } from "../total-info";
+import { Tasks } from "../tasks-list";
 import styles from "./todo.module.css"
 
 export function Todo(){
+  // вынести функцию в отдельный файл и сделать проверку на массив
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
@@ -15,16 +16,20 @@ export function Todo(){
 
     return [];
   });
-  const [titleAddTask, setTitleAddTask] = useState("");
+  const [taskTitle, setTaskTitle] = useState("");
+  
+  const  onAddTitleToTask = (event) => setTaskTitle(event.target.value);
 
   function addTask() {
-    setTasks((prev) => [...prev, NewTask(titleAddTask)]); 
-    setTitleAddTask("");
+    setTasks((prev) => [...prev, newTask(taskTitle)]); 
+    setTaskTitle("");
     setSearchField("");
-  }
+    }
 
   const [searchField, setSearchField] = useState("");
 
+  // вынести в отдельный файл 
+  const filterTasks = (event) => setSearchField(event.target.value);
   function searchFilter(tasks, searchField) {
     const filterField = searchField.trim().toLowerCase();
 
@@ -35,14 +40,18 @@ export function Todo(){
     );
   }
 
+  const searchedTasks = searchFilter(tasks, searchField);
+
   function deleteTask(id) {
-    setTasks(tasks.filter((task) => task.id !== id));
+    setTasks((prev)=> prev.filter((task) => task.id !== id));
   }
 
-  function toggleCheckedTask(id, isDone) {
+  // переписать через прев 
+  function toggleCheckedTask(id, event) {
+    const isToggleChecked = event.target.checked;
     setTasks(
-      tasks.map((task) => {
-        if (task.id === id) return  { ...task, isDone };
+      (prev) => prev.map((task) => {
+        if (task.id === id) return  { ...task, isDone:isToggleChecked };
         return task;
       })
     );
@@ -59,20 +68,19 @@ export function Todo(){
   return (
     <div className={styles.todo}>
       <h1 className={styles.headerLabel}>To Do List</h1>
-      <FormAddTask
+      <AddingTaskForm
         addTask={addTask}
-        titleAddTask={titleAddTask}
-        setTitleAddTask={setTitleAddTask}
+        taskTitle={taskTitle}
+        onAddTitleToTask = {onAddTitleToTask}
       />
       <Search 
-        searchField={searchField} 
-        setSearchField={setSearchField} />
-      <Panel_info_tasks 
+        onFilterTasks = {filterTasks}
+        searchField={searchField} />
+      <TotalInfo 
         tasks={tasks} 
         onDeleteAllTasks={deleteAllTasks} />
-      <ListTasks
-        hasTasks = {tasks.length>0}
-        onSearchTask={searchFilter(tasks, searchField)}
+      <Tasks
+        searchedTasks={searchedTasks}
         onToggleCheckedTask={toggleCheckedTask}
         onDeleteTask={deleteTask}
       />
