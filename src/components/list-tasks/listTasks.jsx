@@ -3,26 +3,25 @@ import styles from './list_tasks.module.css'
 
 export function ListTasks(props) {
   const { 
-    tasks = [],
+    hasTasks,
     onSearchTask,
     onToggleCheckedTask,
     onDeleteTask,
   } = props;
 
-  const hasTasks = tasks.length > 0;
   const isFilterTask = onSearchTask?.length === 0;
 
   if (!hasTasks) {
     return <div className={styles.noTasksListTask}>No tasks yet</div>;
   }
   
-  if(hasTasks && isFilterTask){
+  if(isFilterTask){
     return <div className={styles.noTasksListTask}>Nothing found</div>;
   }
 
   return (
     <ul className={styles.listTask}>
-      {(onSearchTask ?? tasks).map((task) => (
+      {onSearchTask.map((task) => (
         <ItemList
           key={task.id}
           className={styles.taskOnList}
