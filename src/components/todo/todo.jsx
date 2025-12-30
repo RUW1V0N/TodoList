@@ -2,51 +2,50 @@ import { useState, useEffect } from "react"
 import { AddingTaskForm } from "../form-add-task";
 import { newTask } from "./newTask"
 import { Search } from "../search";
+import { searchFilter } from "./searchFilter"
 import { TotalInfo } from "../total-info";
 import { Tasks } from "../tasks-list";
 import styles from "./todo.module.css"
 
 export function Todo(){
-  // вынести функцию в отдельный файл и сделать проверку на массив
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) {
-      return JSON.parse(savedTasks);
-    }
 
+  function onSavedTasks(){
+    const savedTasks = localStorage.getItem("task");
+    
+    if(savedTasks) return JSON.parse(savedTasks);
+    
     return [];
-  });
-  const [taskTitle, setTaskTitle] = useState("");
-  
+  }
+
+  const [tasks, setTasks] = useState(onSavedTasks);
+
+  // add Task
+  const [taskTitle, setTaskTitle] = useState("");  
   const  onAddTitleToTask = (event) => setTaskTitle(event.target.value);
 
   function addTask() {
+    if(!taskTitle.trim()) return setTaskTitle("") ;
     setTasks((prev) => [...prev, newTask(taskTitle)]); 
     setTaskTitle("");
     setSearchField("");
     }
 
+    
+   // search 
   const [searchField, setSearchField] = useState("");
-
-  // вынести в отдельный файл 
   const filterTasks = (event) => setSearchField(event.target.value);
-  function searchFilter(tasks, searchField) {
-    const filterField = searchField.trim().toLowerCase();
-
-    if (filterField.length === 0) return tasks;
-
-    return tasks.filter(({ title }) =>
-      title.toLowerCase().includes(filterField)
-    );
-  }
-
   const searchedTasks = searchFilter(tasks, searchField);
-
+  
+  // delete task
   function deleteTask(id) {
     setTasks((prev)=> prev.filter((task) => task.id !== id));
   }
+  
+  function deleteAllTasks() {
+    setTasks([]);
+  }
 
-  // переписать через прев 
+  // change checked in task
   function toggleCheckedTask(id, event) {
     const isToggleChecked = event.target.checked;
     setTasks(
@@ -57,12 +56,8 @@ export function Todo(){
     );
   }
 
-  function deleteAllTasks() {
-    setTasks([]);
-  }
-
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("task", JSON.stringify(tasks));
   }, [tasks]);
 
   return (
@@ -74,6 +69,7 @@ export function Todo(){
         onAddTitleToTask = {onAddTitleToTask}
       />
       <Search 
+        onSearchFilter 
         onFilterTasks = {filterTasks}
         searchField={searchField} />
       <TotalInfo 
