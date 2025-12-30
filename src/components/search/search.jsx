@@ -4,7 +4,7 @@ import styles from "./search.module.css"
 
 export function Search(props){
     const {
-        onFilterTasks,
+        onInput,
         searchField,
     } = props;
     return (
@@ -16,7 +16,7 @@ export function Search(props){
                 type = "search"
                 placeholder = "Search task"
                 value = {searchField}
-                onChange = {onFilterTasks}
+                onChange = {onInput}
             />
             <SearchIcon/>
         </div>

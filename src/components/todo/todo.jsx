@@ -1,40 +1,31 @@
 import { useState, useEffect } from "react"
 import { AddingTaskForm } from "../form-add-task";
-import { newTask } from "./newTask"
 import { Search } from "../search";
-import { searchFilter } from "./searchFilter"
+import { filterTasks, createTask, getTasksFromStorage } from "../../lib/task"
 import { TotalInfo } from "../total-info";
 import { Tasks } from "../tasks-list";
 import styles from "./todo.module.css"
 
 export function Todo(){
-
-  function onSavedTasks(){
-    const savedTasks = localStorage.getItem("task");
-    
-    if(savedTasks) return JSON.parse(savedTasks);
-    
-    return [];
-  }
-
-  const [tasks, setTasks] = useState(onSavedTasks);
-
-  // add Task
+  const [tasks, setTasks] = useState(getTasksFromStorage);
   const [taskTitle, setTaskTitle] = useState("");  
-  const  onAddTitleToTask = (event) => setTaskTitle(event.target.value);
+  const [searchField, setSearchField] = useState("");
+
+  const onAddTitleToTask = (event) => setTaskTitle(event.target.value);
 
   function addTask() {
-    if(!taskTitle.trim()) return setTaskTitle("") ;
-    setTasks((prev) => [...prev, newTask(taskTitle)]); 
-    setTaskTitle("");
-    setSearchField("");
+    const newTask = createTask(taskTitle);
+
+    if (newTask) {
+      setTasks((prev) => [...prev, newTask]); 
     }
 
+    setTaskTitle("");
+    setSearchField("");
+  }
     
-   // search 
-  const [searchField, setSearchField] = useState("");
-  const filterTasks = (event) => setSearchField(event.target.value);
-  const searchedTasks = searchFilter(tasks, searchField);
+  const onSearchFieldInput = (event) => setSearchField(event.target.value);
+  const searchedTasks = filterTasks(tasks, searchField);
   
   // delete task
   function deleteTask(id) {
@@ -70,7 +61,7 @@ export function Todo(){
       />
       <Search 
         onSearchFilter 
-        onFilterTasks = {filterTasks}
+        onInput = {onSearchFieldInput}
         searchField={searchField} />
       <TotalInfo 
         tasks={tasks} 
