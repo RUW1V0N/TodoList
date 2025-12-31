@@ -3,10 +3,12 @@
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: 44px;
     padding: 1px 12px 1px 16px;
     border: 1px solid #D9D9D9 ;
     border-radius:7px;
     gap: 8px;
+    background-color: #fff;
 }
 
 .search:hover svg{
@@ -26,15 +28,17 @@
 
 .inputSearch{
     flex: 1;
-    height: 40px;
     border: none;
+    background-color: transparent;
     font-size: 16px;
     font-family: 'Inter', Regular;
     color: #B3B3B3;
     text-align: start;
     font-weight: 400;
     letter-spacing: 0;
-    background-color: #ffffff;
+
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .inputSearch:focus-visible {
