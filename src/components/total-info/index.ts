@@ -1,1 +1,1 @@
-export { TotalInfo} from './total-info'
+export { TotalInfo } from './total-info';

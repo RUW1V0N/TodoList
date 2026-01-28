@@ -1,1 +1,1 @@
-export { SearchIcon } from './search-icon'
+export { SearchIcon } from './search-icon';

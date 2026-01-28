@@ -1,6 +1,5 @@
-import { Todo } from '../todo'
+import { Todo } from '../todo';
 
 export function App() {
-
-  return  <Todo/>;
+  return <Todo />;
 }

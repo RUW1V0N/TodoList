@@ -1,32 +1,32 @@
 .title {
-    display: flex;
-    flex: 1;
-    font-family: "Inter", Regular;
-    font-size: 16px;
-    letter-spacing: 0;
-    color: #757575;
+  display: flex;
+  flex: 1;
+  font-family: 'Inter', Regular;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: #757575;
 }
 
-.isDoneTask .title{
-    text-decoration: line-through;
+.isDoneTask .title {
+  text-decoration: line-through;
 }
 
 .checkedItemList {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-.isDoneTask input[type="checkbox"] {
-    accent-color: #2C2C2C;
-    border: #2C2C2C;
+.isDoneTask input[type='checkbox'] {
+  accent-color: #2c2c2c;
+  border: #2c2c2c;
 }
 
 .deleteItemList {
-    display: flex;
-    flex-shrink: 0;
-    margin-left: auto; 
-    height: 100%;
-    padding: 0;
-    background-color: transparent;
-    border: none;
+  display: flex;
+  flex-shrink: 0;
+  margin-left: auto;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }

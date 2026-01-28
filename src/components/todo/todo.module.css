@@ -1,21 +1,21 @@
-.todo{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D9D9D9 ;
-    border-radius:10px;
-    width: 404px;
-    background-color: #FFFFFF;
-    padding: 24px;
-    gap: 24px;
+.todo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  width: 404px;
+  background-color: #ffffff;
+  padding: 24px;
+  gap: 24px;
 }
 
-.headerLabel{
-    display: inline;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    font-family: 'Inter', Semi-bold;
+.headerLabel {
+  display: inline;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Inter', Semi-bold;
 }

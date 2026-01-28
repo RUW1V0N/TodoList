@@ -28,3 +28,38 @@ TodoList
 Проект можно посмотреть по ссылке:
 
 https://ruw1v0n.github.io/TodoList/
+
+
+
+TodoList
+
+A simple web app for task management built using React and Vite.
+
+The goal is to allow users to create, search, and delete tasks, as well as mark them as completed.
+
+Overview
+
+The project is a minimalist single-page task management app.
+
+It allows you to track current tasks, add new ones, search for existing ones, and mark them as completed.
+
+Features
+
+- Create new tasks
+- Mark tasks as completed/uncompleted
+- Delete tasks
+- Search for tasks
+- Automatically update the list when changed
+
+Technologies
+
+The project is built using:
+
+- JavaScript
+- React — UI library
+- Vite — builder and development server
+- HTML/CSS — markup and styles
+
+You can view the project at:
+
+https://ruw1v0n.github.io/TodoList/

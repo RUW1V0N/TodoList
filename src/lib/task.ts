@@ -1,36 +1,36 @@
 export const createTask = (title) => {
-    const trimmedTitle = title.trim();
+  const trimmedTitle = title.trim();
 
-    if (trimmedTitle) {
-        return {
-            id: Date.now().toString(),
-            title: trimmedTitle,
-            isDone: false
-        };
-    }
+  if (trimmedTitle) {
+    return {
+      id: Date.now().toString(),
+      title: trimmedTitle,
+      isDone: false,
+    };
+  }
 
-    return null;
-}
+  return null;
+};
 
 export function filterTasks(tasks, searchField) {
-    const trimmedValue = searchField.trim();
+  const trimmedValue = searchField.trim();
 
-    if (!trimmedValue) {
-        return tasks;
-    }
+  if (!trimmedValue) {
+    return tasks;
+  }
 
-    const value = trimmedValue.toLowerCase()
-    return tasks.filter(({ title }) => title.toLowerCase().includes(value));
+  const value = trimmedValue.toLowerCase();
+  return tasks.filter(({ title }) => title.toLowerCase().includes(value));
 }
 
 export function getTasksFromStorage() {
-    const savedTasks = localStorage.getItem("task");
+  const savedTasks = localStorage.getItem('task');
 
-    if (!savedTasks) {
-        return [];
-    }
+  if (!savedTasks) {
+    return [];
+  }
 
-    const parsedTasks = JSON.parse(savedTasks);
+  const parsedTasks = JSON.parse(savedTasks);
 
-    return Array.isArray(parsedTasks) ? parsedTasks : [];
+  return Array.isArray(parsedTasks) ? parsedTasks : [];
 }
