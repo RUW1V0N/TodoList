@@ -1,16 +1,65 @@
-# React + Vite
+TodoList
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простой веб-приложение «список задач» (To-Do List), реализованное с помощью React и Vite.  
+Цель — дать возможность пользователю создавать, искать и удалять задачи, а также отмечать их как выполненные.
 
-Currently, two official plugins are available:
+Обзор
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проект представляет собой минималистичный SPA для управления задачами.  
+Позволяет отслеживать текущие задачи, добавлять новые, поиск существующих и отмечать их как завершённые.
 
-## React Compiler
+Возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Создание новых задач
+- Отметка задач как выполненных/невыполненных
+- Удаление задачи
+- Поиск задач
+- Автоматическое обновление списка при изменении
 
-## Expanding the ESLint configuration
+Технологии
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Проект построен с использованием:
+
+- JavaScript
+- React — UI-библиотека
+- Vite — сборщик и dev-сервер
+- HTML/CSS — разметка и стили
+
+Проект можно посмотреть по ссылке:
+
+https://ruw1v0n.github.io/TodoList/
+
+
+
+TodoList
+
+A simple web app for task management built using React and Vite.
+
+The goal is to allow users to create, search, and delete tasks, as well as mark them as completed.
+
+Overview
+
+The project is a minimalist single-page task management app.
+
+It allows you to track current tasks, add new ones, search for existing ones, and mark them as completed.
+
+Features
+
+- Create new tasks
+- Mark tasks as completed/uncompleted
+- Delete tasks
+- Search for tasks
+- Automatically update the list when changed
+
+Technologies
+
+The project is built using:
+
+- JavaScript
+- React — UI library
+- Vite — builder and development server
+- HTML/CSS — markup and styles
+
+You can view the project at:
+
+https://ruw1v0n.github.io/TodoList/

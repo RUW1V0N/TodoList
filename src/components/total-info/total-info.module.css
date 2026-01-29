@@ -1,0 +1,29 @@
+.panelInfoTasks {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.infoTotalTasks {
+  flex: 1;
+  text-align: start;
+  font-weight: 600;
+  font-family: 'Inter', Semi-bold;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.infoDeleteAll {
+  flex-shrink: 0;
+  margin-left: auto;
+  height: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Inter', Semi-bold;
+  letter-spacing: 0;
+  background-color: #ffffffff;
+  border: none;
+  padding: 5px;
+  color: #000000;
+}
