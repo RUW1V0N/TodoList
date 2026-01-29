@@ -9,7 +9,7 @@ export function AddingTaskForm(props) {
   }
   return (
     <form className={styles.formAddingTask} onSubmit={onSubmit}>
-      <input 
+      <input
         className={styles.addingTask}
         name="adding-task"
         autoComplete="off"

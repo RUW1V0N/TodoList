@@ -11,7 +11,8 @@
   background-color: #fff;
 }
 
-.search:hover svg, .search:focus-within svg {
+.search:hover svg,
+.search:focus-within svg {
   transform: translateX(16px) translateY(-50%) scale(0.9);
   opacity: 0;
 }

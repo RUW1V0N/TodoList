@@ -11,7 +11,7 @@ export function ItemList(props) {
 
   return (
     <li className={`${className} ${isDone ? styles.isDoneTask : ''}`} id={id} title={title}>
-      <input 
+      <input
         className={styles.checkedItemList}
         name="checked_item_list"
         type="checkbox"

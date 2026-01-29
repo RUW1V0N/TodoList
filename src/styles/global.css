@@ -86,7 +86,7 @@ video {
 /*
   Наследуем свойства шрифт для полей ввода
  */
-input ,
+input,
 textarea,
 select,
 button {

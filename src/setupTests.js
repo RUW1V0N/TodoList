@@ -7,5 +7,5 @@ globalThis.React = React;
 
 const matchers = jestDomMatchers.default ?? jestDomMatchers;
 if (matchers && typeof matchers === 'object') {
-	expect.extend(matchers);
+  expect.extend(matchers);
 }
