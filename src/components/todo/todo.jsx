@@ -55,7 +55,7 @@ export function Todo() {
     <div className={styles.todo}>
       <h1 className={styles.headerLabel}>To Do List</h1>
       <AddingTaskForm addTask={addTask} taskTitle={taskTitle} onAddTitleToTask={onAddTitleToTask} />
-      <Search onSearchFilter onInput={onSearchFieldInput} searchField={searchField} />
+      <Search onInput={onSearchFieldInput} searchField={searchField} />
       <TotalInfo tasks={tasks} onDeleteAllTasks={deleteAllTasks} />
       <Tasks
         searchedTasks={searchedTasks}
